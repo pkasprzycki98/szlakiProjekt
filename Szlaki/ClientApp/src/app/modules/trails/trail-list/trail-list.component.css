@@ -1,0 +1,19 @@
+  table {
+    width: 80%;
+    margin:auto;
+  }
+  
+  .mat-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  .margin-m {
+   display: flex;
+   margin-left: 10%;
+   align-items: center;
+  }
+
+  .poitner:hover {
+    cursor: pointer;
+    background-color: #ebeef2;
+  }

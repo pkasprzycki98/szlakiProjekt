@@ -1,0 +1,38 @@
+.full-width-input {
+    width:100%;
+}
+
+.flex-vertical {
+   display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  height: calc(100vh - 64px);
+}
+.mat-card {
+    width:50%
+}
+
+.mat-card-footer {
+    text-align: center;
+    margin: auto;
+}
+
+.flex-align-center {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.flex-align-center div {
+    display: flex !important;
+    width: 66vw !important;
+}

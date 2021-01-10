@@ -1,0 +1,54 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile *ngIf="!isLogging"><mat-spinner></mat-spinner></mat-grid-tile>
+  <mat-grid-tile *ngIf="isLogging">
+    <mat-card style="text-align: center; width: 300px">
+      <mat-card-title>Login</mat-card-title>
+      <mat-card-content>
+        <form (ngSubmit)="onFormSubmit(signupForm)" #signupForm="ngForm">
+          <div>
+            <mat-form-field class="full-width" hideRequiredMarker>
+              <input
+                matInput
+                type="text"
+                [(ngModel)]="user.username"
+                id="inputUsername"
+                name="username"
+                placeholder="Username"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div>
+            <mat-form-field class="full-width" hideRequiredMarker>
+              <input
+                matInput
+                type="password"
+                [(ngModel)]="user.password"
+                name="password"
+                placeholder="Hasło"
+                required
+              />
+            </mat-form-field>
+          </div>
+          <div class="error-container">
+            <mat-error *ngIf="!successfulLogin"
+              ><p>Błędny login lub hasło</p></mat-error
+            >
+          </div>
+          <div class="forgotten-password-box">
+            <a (click)="onForgottenPasswordClick()">Nie pamiętasz hasła?</a>
+          </div>
+          <button
+            mat-raised-button
+            type="submit"
+            color="primary"
+            class="primary"
+            [disabled]="!signupForm.valid"
+          >
+            <span>Zaloguj</span>
+          </button>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>

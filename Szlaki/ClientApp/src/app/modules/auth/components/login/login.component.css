@@ -1,0 +1,10 @@
+.max-width{
+  min-width: 70%; 
+}
+.full-width {
+  width: 100%;
+}
+.forgotten-password-box{
+padding:5px;
+cursor:pointer;
+}

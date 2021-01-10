@@ -1,0 +1,16 @@
+.container {
+    display:flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 100px;
+}
+.details_Container {
+    min-width: 20vw;
+    margin:20px;
+    width: 20%;
+}
+.photo_Container {
+    min-width: 20vw;
+    margin:20px;
+    width: 80%;
+}

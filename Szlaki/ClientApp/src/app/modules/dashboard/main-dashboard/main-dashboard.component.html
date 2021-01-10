@@ -1,0 +1,19 @@
+<mat-grid-list cols="1" rowHeight="2:1">
+  <mat-grid-tile>
+    <div
+      *ngFor="let module of modules"
+      class="{{ module.id }}"
+      style="margin-left: 20px"
+    >
+      <span routerLink="{{ module.routing }}" style="cursor: pointer">
+        <mat-card style="text-align: center" class="dashboard-item">
+          <mat-card-title>{{ module.name }}</mat-card-title>
+          <mat-card-content style="margin: 40%">
+            <mat-icon style="font-size: 38px">{{ module.icon }}</mat-icon>
+          </mat-card-content>
+          <mat-card-footer>{{ module.description }}</mat-card-footer>
+        </mat-card>
+      </span>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>

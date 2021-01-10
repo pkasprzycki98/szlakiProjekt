@@ -1,0 +1,9 @@
+.navigation {
+    width: 90%;
+    margin: auto;
+    display: grid;
+    grid-template-columns: auto 55% auto auto;
+  }
+  .example-spacer {
+    flex: 1 1 auto;
+  }
