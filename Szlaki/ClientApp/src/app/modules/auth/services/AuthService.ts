@@ -1,3 +1,4 @@
+import { User } from './../models/user';
 import { Token } from './../models/token';
 import { config } from './../../../config';
 import { Injectable } from '@angular/core'; 
@@ -5,11 +6,13 @@ import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import {Observable, of as observableOf } from 'rxjs';
 import { ForgottenPassword } from '../models/forgotten-password';
+import  { Response} from '../../trails/models/response';
 
 @Injectable()
 export class AuthService {
     public isLog = false;
     private tokenUrl = config.apiUrl + "/login";
+    private registerUrl = config.apiUrl + "/api/register/registration";
 
     constructor(private httpClient: HttpClient) { }
 
@@ -18,6 +21,13 @@ export class AuthService {
             username: username,
             password: password
         }) as Observable<Token>;
+    }
+
+    public register(username:string, password: string): Observable<Response<string>> {
+        return this.httpClient.post(this.registerUrl, {
+            username: username,
+            password: password
+        }) as Observable<Response<string>>;
     }
 
     public refreshToken(token: string, refreshToken: string): Observable<Token> {

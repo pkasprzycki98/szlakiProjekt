@@ -23,7 +23,7 @@ export class LoginComponent {
   }
 
   public onForgottenPasswordClick() {
-    this.router.navigate(['/forgotten-password']);
+    this.router.navigate(['/register']);
   }
 
   public onFormSubmit({ value, valid }: { value: User, valid: boolean }) {

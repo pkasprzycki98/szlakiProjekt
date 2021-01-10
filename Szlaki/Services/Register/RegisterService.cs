@@ -25,7 +25,7 @@ namespace Szlaki.Services.Register
         private readonly IMailService _mailSerivce;
 
         private readonly string _emailPasswordResetTokenPath = Path.Combine("HTMLTemplates", "PasswordResetEmailTemplate.html");
-        private readonly string _resetPasswordMailSubject = "Salon ptyczny - resetowanie hasła";
+        private readonly string _resetPasswordMailSubject = "Trails - resetowanie hasła";
         public RegisterService(UserManager<ApplicationUser> userManager, ApplicationDbContext dbContext, RoleManager<IdentityRole> roleManager, IMailService mailSerivce)
         {
             _userManager = userManager;
@@ -40,10 +40,6 @@ namespace Szlaki.Services.Register
             var response = new ServiceResponse<string>();
             var user = await _userManager.FindByNameAsync(model.Username);
 
-            if(user == null && model.Username.Contains("@"))
-            {
-                user = await _userManager.FindByEmailAsync(model.Email);
-            }
             if(user != null)
             {
                 response.Success = false;
@@ -58,7 +54,6 @@ namespace Szlaki.Services.Register
             {
                 SecurityStamp = Guid.NewGuid().ToString(),
                 UserName = model.Username,
-                Email = model.Email,
                 CraeteDateTime = now,
                 LastModifedDateTime = now
             };

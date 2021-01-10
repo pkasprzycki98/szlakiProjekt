@@ -2,7 +2,7 @@
   <mat-grid-tile *ngIf="!isLogging"><mat-spinner></mat-spinner></mat-grid-tile>
   <mat-grid-tile *ngIf="isLogging">
     <mat-card style="text-align: center; width: 300px">
-      <mat-card-title>Login</mat-card-title>
+      <mat-card-title>Rejestracja</mat-card-title>
       <mat-card-content>
         <form (ngSubmit)="onFormSubmit(signupForm)" #signupForm="ngForm">
           <div>
@@ -33,11 +33,6 @@
           <div class="error-container">
             <mat-error *ngIf="!successfulLogin"
               ><p>Błędny login lub hasło</p></mat-error
-            >
-          </div>
-          <div class="forgotten-password-box">
-            <a (click)="onForgottenPasswordClick()"
-              >Nie masz konta? Zrejestruj się!</a
             >
           </div>
           <button

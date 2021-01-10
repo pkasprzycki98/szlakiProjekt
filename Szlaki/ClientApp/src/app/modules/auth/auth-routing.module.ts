@@ -1,3 +1,4 @@
+import { RegisterComponent } from './components/register/register.component';
 import { ForgottenPasswordComponent } from './components/forgotten-password/forgotten-password.component';
 import { LoginComponent } from './components/login/login.component';
 import { NgModule } from '@angular/core';
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'forgotten-password',
     component: ForgottenPasswordComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 ];
 

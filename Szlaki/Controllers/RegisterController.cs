@@ -36,7 +36,7 @@ namespace Szlaki.Controllers
                 
                 return NotFound();
             }          
-            return Ok(response.Data);                   
+            return Ok(response);                   
         }
         [HttpPost("sendResetPasswordEmail")]
         public async Task<IActionResult> SendPasswordResetEmail([FromBody]PasswordResetTokenViewModel passwordResetTokenDto)

@@ -16,10 +16,11 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import { ForgottenPasswordComponent } from './components/forgotten-password/forgotten-password.component';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { RegisterComponent } from '../auth/components/register/register.component';
 
 
 @NgModule({
-  declarations: [LoginComponent, ForgottenPasswordComponent],
+  declarations: [LoginComponent, ForgottenPasswordComponent, RegisterComponent],
   providers: [
     AuthGuard,
     AuthService,
